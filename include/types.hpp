@@ -5,4 +5,6 @@
 #ifndef POLPRODUKTY_TYPES_HPP
 #define POLPRODUKTY_TYPES_HPP
 
+using ElementID = int;
+
 #endif //POLPRODUKTY_TYPES_HPP

@@ -1,3 +1,0 @@
-D:/semestr_3/zpo/clion_projects/polprodukty/cmake-build-debug/CMakeFiles/polprodukty.dir
-D:/semestr_3/zpo/clion_projects/polprodukty/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/semestr_3/zpo/clion_projects/polprodukty/cmake-build-debug/CMakeFiles/rebuild_cache.dir
