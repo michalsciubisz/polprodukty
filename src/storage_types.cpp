@@ -5,9 +5,14 @@
 
 Package PackageQueue::pop() {
     switch (queue_type_) {
-        case FIFO:
+        case FIFO: {
+            Package& popped = queue_.back();
             queue_.pop_back();
+            return popped;
+        }
         case LIFO:
+            Package& popped = queue_.front();
             queue_.pop_front();
+            return popped;
     }
 }
