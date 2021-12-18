@@ -9,13 +9,14 @@
 #define POLPRODUKTY_STORAGE_TYPES_HPP
 
 enum PackageQueueType{FIFO, LIFO};
-using const_iterator = std::list<Package>::const_iterator;
 
 class IPackageStockpile {
 public:
-    virtual void push() { stockpile_.push_back(Package&&); }
-    virtual size_t size() const { return stockpile_.size(); }
-    virtual bool empty() const { return stockpile_.size() == 0; }
+    using const_iterator = std::list<Package>::const_iterator;
+
+    virtual void push() = 0;
+    virtual size_t size() const = 0;
+    virtual bool empty() const = 0;
 
     const_iterator begin() const { return stockpile_.cbegin(); }
     const_iterator cbegin() const { return stockpile_.cbegin(); }
@@ -36,8 +37,12 @@ public:
 class PackageQueue: public IPackageQueue {
 public:
     PackageQueue(PackageQueueType queue_type) : queue_type_(queue_type) {}
+
     Package pop() override;
     PackageQueueType get_queue_type() const override { return queue_type_; }
+    void push() override { stockpile_.push_back(Package&&); }
+    size_t size() const override { return stockpile_.size(); }
+    bool empty() const override { return stockpile_.size() == 0; }
 
     PackageQueueType queue_type_;
     std::list<Package> queue_;
