@@ -1,0 +1,3 @@
+C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/CMakeFiles/polprodukty.dir
+C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/CMakeFiles/rebuild_cache.dir

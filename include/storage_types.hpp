@@ -8,12 +8,14 @@
 enum PackageQueueType{FIFO, LIFO};
 
 class PackageQueue{
-    PackageQueue(PackageQueueType)
+    PackageQueue(PackageQueueType queue_type) : queue_type_(queue_type) {}
+
+    PackageQueueType queue_type_;
 };
 
 class IPackageQueue{
-    Package pop();
-    PackageQueueType get_queue_type() {query;}
+    virtual Package pop() = 0;
+    virtual PackageQueueType get_queue_type() {}
 };
 
 class IPackageStockpile{
