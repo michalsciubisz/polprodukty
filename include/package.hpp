@@ -10,11 +10,7 @@ class Package {
 public:
     Package() = default;
     Package(ElementID id) : id_(id) {}
-    Package(Package&& p) //co tu se dzeje ziom // nw, skad wzielo sie blank id? xdd
-    {
-        id_ = p.get_id();
-        p.id_ = BLANK_ID;
-    }
+    Package(Package&&) = default;
     Package& operator=(Package&&) = default;
     ElementID get_id() { return id_; }
     ~Package() = default;
