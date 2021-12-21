@@ -3,5 +3,5 @@
 //
 #include "package.hpp"
 
-std::set<ElementID> Package::assigned_IDs;
-std::set<ElementID> Package::freed_IDs;
+std::set<ElementID> Package::assigned_IDs {0};
+std::set<ElementID> Package::freed_IDs ;
