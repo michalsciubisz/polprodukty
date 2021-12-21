@@ -11,23 +11,14 @@ class Package {
 public:
     Package(){///trzeba jeszcze dodać mechanizm usuwania z tych list i nie wiem gdzie to ma byc implementowane, chyba w zrodlowym ale to niewazne
         if(freed_IDs.size()){
-            auto lo = *freed_IDs.cbegin();
-            for(auto it = freed_IDs.begin(); it!=freed_IDs.end(); it++) {
-                if (*it < lo) {
-                    lo = *it;
-                }
-            }
-            id_=lo;
+            id_=*freed_IDs.begin();
+            assigned_IDs.insert(*freed_IDs.begin());
+            freed_IDs.erase(freed_IDs.begin());
         }
         else {
-            auto hig = *assigned_IDs.cbegin();
-            for (auto it = assigned_IDs.begin(); it != assigned_IDs.end(); it++) {
-                if (*it > hig) {
-                    hig = *it;
-                }
-            }
-            assigned_IDs.insert(hig + 1);
-            id_ = hig + 1;
+            ElementID end_id = *assigned_IDs.rbegin();
+            assigned_IDs.insert(end_id + 1);
+            id_ = end_id + 1 ;
         }
     };
     Package(ElementID id) : id_(id) {}
@@ -41,7 +32,6 @@ public:
     ~Package() = default;
 
     ElementID id_;
-    static ElementID next_id_;
 };
 
 #endif //POLPRODUKTY_PACKAGE_HPP

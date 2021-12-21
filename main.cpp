@@ -5,7 +5,8 @@ int main() {
     Package a;
     Package b;
     Package c;
-    std::cout << a.get_id() << b.get_id() << c.get_id();
+    Package d;
+    std::cout << a.get_id() << b.get_id() << c.get_id() << d.get_id();
     return 0;
 
 }
