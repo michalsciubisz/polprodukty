@@ -40,9 +40,9 @@ public:
 
     Package pop() override;
     PackageQueueType get_queue_type() const override { return queue_type_; }
-    void push() override { stockpile_.push_back(Package&&); }
-    size_t size() const override { return stockpile_.size(); }
-    bool empty() const override { return stockpile_.size() == 0; }
+    void push() override { queue_.emplace_back((Package())); }
+    size_t size() const override { return queue_.size(); }
+    bool empty() const override { return queue_.size() == 0; }
 
     PackageQueueType queue_type_;
     std::list<Package> queue_;
