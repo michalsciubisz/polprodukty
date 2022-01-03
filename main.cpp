@@ -11,8 +11,7 @@ int main() {
 
     PackageQueue q(FIFO);
     std::cout << q.empty() << '\n';
-    q.push();
-    q.push();
+    q.push(std::move(a));
     std::cout << q.size() << '\n';
     q.pop();
     std::cout << q.size();
