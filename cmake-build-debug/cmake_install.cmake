@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty
+# Install script for directory: D:/studia sem 2/programowanie/Sieci/polprodukty
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -32,9 +32,9 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/msys64/mingw64/bin/objdump.exe")
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -5,96 +5,452 @@
 		<Option title="polprodukty"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\googletest-master\;CMake Files\googletest-master\googlemock\;CMake Files\googletest-master\googlemock\cmake\;CMake Files\googletest-master\googletest\;CMake Files\googletest-master\googletest\cmake\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug"/>
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="polprodukty">
-				<Option output="C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/polprodukty.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug"/>
+			<Target title="polprodukty_debug">
+				<Option output="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/polprodukty_debug.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/include"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/x86_64-w64-mingw32"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/x86_64-w64-mingw32"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 polprodukty"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 polprodukty_debug"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="polprodukty/fast">
-				<Option output="C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/polprodukty.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug"/>
+			<Target title="polprodukty_debug/fast">
+				<Option output="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/polprodukty_debug.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/include"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/x86_64-w64-mingw32"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/x86_64-w64-mingw32"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 polprodukty/fast"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 polprodukty_debug/fast"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="polprodukty_test">
+				<Option output="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/polprodukty_test.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DEXERCISE_ID=1"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/mocks"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googlemock/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googlemock"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/x86_64-w64-mingw32"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 polprodukty_test"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="polprodukty_test/fast">
+				<Option output="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/polprodukty_test.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DEXERCISE_ID=1"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/mocks"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googlemock/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googlemock"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/x86_64-w64-mingw32"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 polprodukty_test/fast"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug"/>
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug"/>
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock_main">
+				<Option output="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/lib/libgmock_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googlemock/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googlemock"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/x86_64-w64-mingw32"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock/Makefile&quot;  VERBOSE=1 gmock_main"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock_main/fast">
+				<Option output="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/lib/libgmock_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googlemock/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googlemock"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/x86_64-w64-mingw32"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock/Makefile&quot;  VERBOSE=1 gmock_main/fast"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock">
+				<Option output="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/lib/libgmockd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googlemock/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googlemock"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/x86_64-w64-mingw32"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock/Makefile&quot;  VERBOSE=1 gmock"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock/fast">
+				<Option output="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/lib/libgmockd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googlemock/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googlemock"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/x86_64-w64-mingw32"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock/Makefile&quot;  VERBOSE=1 gmock/fast"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest">
+				<Option output="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/x86_64-w64-mingw32"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest/Makefile&quot;  VERBOSE=1 gtest"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest/fast">
+				<Option output="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/x86_64-w64-mingw32"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main">
+				<Option output="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/x86_64-w64-mingw32"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest/Makefile&quot;  VERBOSE=1 gtest_main"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main/fast">
+				<Option output="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest/include"/>
+					<Add directory="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/x86_64-w64-mingw32"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed"/>
+					<Add directory="D:/Clion/MSYS/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
+					<CompileFile command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Clion/MSYS/mingw64/bin/mingw32-make.exe -f &quot;D:/studia sem 2/programowanie/Sieci/polprodukty/cmake-build-debug/googletest-master/googletest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/main.cpp">
-			<Option target="polprodukty"/>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googlemock/src/gmock-all.cc">
+			<Option target="gmock"/>
 		</Unit>
-		<Unit filename="C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/src/package.cpp">
-			<Option target="polprodukty"/>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googlemock/src/gmock_main.cc">
+			<Option target="gmock_main"/>
 		</Unit>
-		<Unit filename="C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/src/storage_types.cpp">
-			<Option target="polprodukty"/>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest/src/gtest-all.cc">
+			<Option target="gtest"/>
 		</Unit>
-		<Unit filename="C:/Users/tomis/OneDrive/Pulpit/ZPO/polprodukty/CMakeLists.txt">
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest/src/gtest_main.cc">
+			<Option target="gtest_main"/>
+		</Unit>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/main.cpp">
+			<Option target="polprodukty_debug"/>
+		</Unit>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/netsim_tests/test/main_gtest.cpp">
+			<Option target="polprodukty_test"/>
+		</Unit>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/netsim_tests/test/test_package.cpp">
+			<Option target="polprodukty_test"/>
+		</Unit>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/netsim_tests/test/test_storage_types.cpp">
+			<Option target="polprodukty_test"/>
+		</Unit>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/src/package.cpp">
+			<Option target="polprodukty_debug"/>
+			<Option target="polprodukty_test"/>
+		</Unit>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/src/storage_types.cpp">
+			<Option target="polprodukty_debug"/>
+			<Option target="polprodukty_test"/>
+		</Unit>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\googletest-master\"/>
+		</Unit>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googlemock/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\googletest-master\googlemock\"/>
+		</Unit>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googlemock/cmake/gmock.pc.in">
+			<Option virtualFolder="CMake Files\googletest-master\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googlemock/cmake/gmock_main.pc.in">
+			<Option virtualFolder="CMake Files\googletest-master\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\googletest-master\googletest\"/>
+		</Unit>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest/cmake/Config.cmake.in">
+			<Option virtualFolder="CMake Files\googletest-master\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest/cmake/gtest.pc.in">
+			<Option virtualFolder="CMake Files\googletest-master\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest/cmake/gtest_main.pc.in">
+			<Option virtualFolder="CMake Files\googletest-master\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="D:/studia sem 2/programowanie/Sieci/polprodukty/googletest-master/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\googletest-master\googletest\cmake\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>
