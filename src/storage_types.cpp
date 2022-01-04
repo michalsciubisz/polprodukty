@@ -6,13 +6,13 @@
 Package PackageQueue::pop() {
     switch (queue_type_) {
         case FIFO: {
-            Package popped = std::move(queue_.back());
-            queue_.pop_back();
+            Package popped = std::move(queue_.front());
+            queue_.pop_front();
             return popped;
         }
         case LIFO: {
-            Package popped = std::move(queue_.front());
-            queue_.pop_front();
+            Package popped = std::move(queue_.back());
+            queue_.pop_back();
             return popped;
         }
         default:
