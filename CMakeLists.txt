@@ -12,6 +12,9 @@ include_directories(
 set(SOURCE_FILES
         src/package.cpp
         src/storage_types.cpp
+        src/helpers.cpp
+        src/factory.cpp
+        src/nodes.cpp
         )
 
 add_executable(polprodukty_debug ${SOURCE_FILES} main.cpp)
