@@ -29,7 +29,9 @@ public:
 
     Package& operator=(Package&&) = default;
     ElementID get_id() const { return id_; }
-    ~Package() = default;
+    ~Package() {
+        freed_IDs.insert(get_id());
+    }
 
     ElementID id_;
 };
