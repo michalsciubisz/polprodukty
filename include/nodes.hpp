@@ -23,6 +23,7 @@ public:
     void remove_receiver(IPackageReceiver* r);
     IPackageReceiver* choose_receiver();
     preferences_t& get_preferences() {}
+    ProbabilityGenerator pg_;
 };
 
 class PackageSender : ReceiverPreferences{
@@ -40,8 +41,8 @@ class Ramp : PackageSender{
 public:
     Ramp(ElementID id, TimeOffset di) : id_(id), di_(di) {}
     void deliver_goods(Time t);
-    TimeOffset get_delivery_interval() {return di_}
-    ElementID get_id() {return id_}
+    TimeOffset get_delivery_interval() {return di_;}
+    ElementID get_id() {return id_;}
     ElementID id_;
     TimeOffset di_;
 };
