@@ -1,15 +1,16 @@
 //
 // Created by michal on 14/12/2021.
 //
-#include "types.hpp"
+
 
 #ifndef POLPRODUKTY_PACKAGE_HPP
 #define POLPRODUKTY_PACKAGE_HPP
 #include <set>
+#include "types.hpp"
 
 class Package {
 public:
-    Package(){///trzeba jeszcze dodać mechanizm usuwania z tych list i nie wiem gdzie to ma byc implementowane, chyba w zrodlowym ale to niewazne
+    Package(){
         if(freed_IDs.size()){
             id_=*freed_IDs.begin();
             assigned_IDs.insert(*freed_IDs.begin());

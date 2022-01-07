@@ -5,4 +5,12 @@
 #ifndef MAIN_CPP_FACTORY_HPP
 #define MAIN_CPP_FACTORY_HPP
 
+class Factory : Ramp{
+
+};
+
+class NodeCollection{
+
+};
+
 #endif //MAIN_CPP_FACTORY_HPP
