@@ -18,7 +18,7 @@ void ReceiverPreferences::remove_receiver(IPackageReceiver *r) {
 }
 
 void Worker::do_work(Time time) {
-
+ time++;
 }
 
 IPackageReceiver *ReceiverPreferences::choose_receiver() {
@@ -26,7 +26,7 @@ IPackageReceiver *ReceiverPreferences::choose_receiver() {
 }
 
 void Ramp::deliver_goods(Time t) {
-
+t++;
 }
 
 void PackageSender::send_package() {
