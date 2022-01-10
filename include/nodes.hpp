@@ -11,6 +11,8 @@
 #include "package.hpp"
 #include "storage_types.hpp"
 #include "helpers.hpp"
+#include <optional>
+
 
 enum class ReceiverType {RAMP, WORKER, STOREHOUSE};
 
@@ -50,12 +52,15 @@ public:
     PackageSender(PackageSender&&) = default;
 
     void send_package();
-    //std::optional<Package>& get_sending_buffer();
+    const std::optional<Package>& get_sending_buffer() const { return sending_buffer_;}
 
     ReceiverPreferences receiver_preferences_;
 
+private:
+    std::optional<Package> sending_buffer_ = std::nullopt;
+
 protected:
-    void push_package(Package&&);
+    void push_package(ReceiverPreferences&& p) {sending_buffer_=p;}
 };
 
 class Ramp: public PackageSender {
@@ -73,9 +78,15 @@ class Worker: public PackageSender, public IPackageReceiver, public IPackageQueu
 public:
     Worker(ElementID id, TimeOffset pd, std::unique_ptr<IPackageQueue> q) : id_(id), pd_(pd), q_(std::move(q)) {}
     void do_work(Time t);
-    TimeOffset get_processing_duration() { return pd_; }
-    Time get_package_processing_start_time() { return id_; }
+    TimeOffset get_processing_duration() const { return pd_; }
+    Time get_package_processing_start_time() const { return id_; }
+    void receive_package(Package&& p) override { q_->push(std::move(p));}
 
+    IPackageStockpile::const_iterator begin() const override { return q_->begin(); };
+    IPackageStockpile::const_iterator cbegin() const override { return q_->cbegin(); };
+    IPackageStockpile::const_iterator end() const override { return q_->end(); };
+    IPackageStockpile::const_iterator cend() const override { return q_->cend(); };
+private:
     ElementID id_;
     TimeOffset pd_;
     std::unique_ptr<IPackageQueue> q_;
@@ -83,8 +94,15 @@ public:
 
 class Storehouse: public IPackageReceiver, public IPackageStockpile {
     Storehouse(ElementID id, std::unique_ptr<IPackageStockpile> d) : id_(id), d_(std::move(d)) {}
+    ElementID id() {return id_;}
+    void receive_package(Package &&p) override { d_->push(std::move(p)); }
+
+    IPackageStockpile::const_iterator begin() const override { return d_->begin(); };
+    IPackageStockpile::const_iterator cbegin() const override { return d_->cbegin(); };
+    IPackageStockpile::const_iterator end() const override { return d_->end(); };
+    IPackageStockpile::const_iterator cend() const override { return d_->cend(); };
+private:
     ElementID id_;
     std::unique_ptr<IPackageStockpile> d_;
-    ElementID id() {return id_;}
 };
 #endif //MAIN_CPP_NODES_HPP
