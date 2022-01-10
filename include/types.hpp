@@ -5,9 +5,11 @@
 #ifndef POLPRODUKTY_TYPES_HPP
 #define POLPRODUKTY_TYPES_HPP
 
+#include <functional>
+
 using ElementID = unsigned int;
 using Time = unsigned int;
 using TimeOffset = unsigned int;
-using ProbabilityGenerator = double;
+using ProbabilityGenerator = std::function<double()>;
 
 #endif //POLPRODUKTY_TYPES_HPP
