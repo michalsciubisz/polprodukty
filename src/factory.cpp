@@ -88,13 +88,12 @@ bool Factory::has_reachable_storehouse(const PackageSender *sender, std::map<con
 }
 
 ParsedLineData parse_line(std::string line){
-    ParsedLineData new_line;
-    std::vector<std::string> tokens;
-    std::string token;
-
     std::istringstream token_stream(line);
     char delimiter = ' ';
 
+    std::string token;
+    ParsedLineData new_line;
+    std::vector<std::string> tokens;
     while (std::getline(token_stream, token, delimiter)) {
         tokens.push_back(token);
     }
@@ -102,11 +101,11 @@ ParsedLineData parse_line(std::string line){
     if (*tokens.begin() == "LOADING_RAMP") {
         new_line.element_type = ParsedLineData::ElementType::LOADING_RAMP;
     }
-    else if (*tokens.begin() == "WORKER") {
-        new_line.element_type = ParsedLineData::ElementType::WORKER;
-    }
     else if (*tokens.begin() == "STOREHOUSE") {
         new_line.element_type = ParsedLineData::ElementType::STOREHOUSE;
+    }
+    else if (*tokens.begin() == "WORKER") {
+        new_line.element_type = ParsedLineData::ElementType::WORKER;
     }
     else if (*tokens.begin() == "LINK") {
         new_line.element_type = ParsedLineData::ElementType::LINK;
@@ -126,7 +125,6 @@ ParsedLineData parse_line(std::string line){
         std::string value = pairs[1];
         new_line.parameters.emplace(key, value);
     }
-
     return new_line;
 }
 
