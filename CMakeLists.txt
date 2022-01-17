@@ -16,6 +16,8 @@ set(SOURCE_FILES
         src/helpers.cpp
         src/factory.cpp
         src/nodes.cpp
+        src/reports.cpp
+        src/simulation.cpp
         )
 
 add_executable(polprodukty_debug ${SOURCE_FILES} main.cpp)
@@ -25,13 +27,15 @@ set(SOURCES_FILES_TESTS
         netsim_tests/test/test_package.cpp
         netsim_tests/test/test_nodes.cpp
         netsim_tests/test/test_Factory.cpp
-#        netsim_tests/test/test_factory_io.cpp
+        netsim_tests/test/test_factory_io.cpp
+        netsim_tests/test/test_reports.cpp
+        netsim_tests/test/test_simulate.cpp
         )
 
 # Dodaj konfigurację typu `Test`.
 add_executable(polprodukty_test ${SOURCE_FILES} ${SOURCES_FILES_TESTS} netsim_tests/test/main_gtest.cpp)
 
-target_compile_definitions(polprodukty_test PUBLIC EXERCISE_ID=3)
+target_compile_definitions(polprodukty_test PUBLIC EXERCISE_ID=SIMULATION)
 
 # Dodaj katalogi z plikami nagłówkowymi wyłącznie do konkretnej konfiguracji (tu: `Test`).
 target_include_directories(polprodukty_test PUBLIC
