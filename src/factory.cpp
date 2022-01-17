@@ -3,6 +3,7 @@
 //
 #include <stdexcept>
 #include <map>
+#include <sstream>
 #include "factory.hpp"
 
 void Factory::do_work(Time time) {
@@ -153,12 +154,79 @@ std::string convert_to_string(PackageQueueType type) {
     }
 }
 
-Factory load_factory_structure(std::istream& is){
+ParsedLineData parse_line(std::string line) {
+    ParsedLineData new_line;
+    std::vector<std::string> tokens;
+    std::string token;
+
+    std::istringstream token_stream(line);
+    char delimiter = ' ';
+
+    while (std::getline(token_stream, token, delimiter)) {
+        tokens.push_back(token);
+    }
+
+    if (*tokens.begin() == "LOADING_RAMP") {
+        new_line.element_type = ParsedLineData::ElementType::LOADING_RAMP;
+    }
+    else if (*tokens.begin() == "WORKER") {
+        new_line.element_type = ParsedLineData::ElementType::WORKER;
+    }
+    else if (*tokens.begin() == "STOREHOUSE") {
+        new_line.element_type = ParsedLineData::ElementType::STOREHOUSE;
+    }
+    else if(*tokens.begin() == "LINK") {
+        new_line.element_type = ParsedLineData::ElementType::LINK;
+    }
+    else {
+        throw std::logic_error("Wrong element type!");
+    }
+
+    for (auto it = tokens.begin() + 1; it != tokens.end(); ++it) {
+        std::string k_v;
+        std::istringstream token_stream_2(*it);
+        std::vector<std::string> pairs;
+        while (std::getline(token_stream_2, k_v, '=')) {
+            pairs.push_back(k_v);
+        }
+        std::string key = pairs[0];
+        std::string value = pairs[1];
+        new_line.parameters.emplace(key, value);
+    }
+
+    return new_line;
+}
+
+PackageQueueType convert(std::string str) {
+    if (str == "LIFO") {
+        return LIFO;
+    }
+    else if (str == "FIFO") {
+        return FIFO;
+    }
+    else {
+        throw "Invalid queue type!";
+    }
+}
+
+std::string convert_to_string(PackageQueueType type) {
+    if (type == FIFO) {
+        return "FIFO";
+    }
+    else if(type == LIFO) {
+        return "LIFO";
+    }
+    else {
+        throw "Invalid queue type";
+    }
+}
+
+Factory load_factory_structure(std::istream& is) {
 
     Factory factory;
     std::string line;
 
-    while(std::getline(is, line)) {
+    while (std::getline(is, line)) {
         if (!line.empty() and line.find(";") == std::string::npos) {
             ParsedLineData data;
             data = parse_line(line);
@@ -241,7 +309,7 @@ Factory load_factory_structure(std::istream& is){
     return factory;
 }
 
-void save_factory_structure(Factory& factory, std::ostream& os){
+void save_factory_structure(Factory& factory, std::ostream& os) {
     std::string save = "; == LOADING_RAMPS ==\n\n";
     std::string link = "; == LINKS ==\n\n";
     std::vector<ElementID> id_vector;
