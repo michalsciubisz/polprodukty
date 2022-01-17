@@ -10,7 +10,7 @@
 
 struct ParsedLineData{
     enum class ElementType{
-        LOADING_RAMP,
+        RAMP,
         WORKER,
         STOREHOUSE,
         LINK
@@ -122,7 +122,7 @@ public:
     void do_work(Time time);
 };
 
-std::string convert_to_string(PackageQueueType type);
+std::string convert_to_string(PackageQueueType queue_type);
 ParsedLineData parse_line(std::string line);
 PackageQueueType convert(std::string str);
 Factory load_factory_structure(std::istream& is);
