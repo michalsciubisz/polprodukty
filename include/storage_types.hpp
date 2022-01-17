@@ -1,12 +1,14 @@
 //
 // Created by michal on 14/12/2021.
 //
-#include <stack>
-#include <list>
-#include "package.hpp"
+
 
 #ifndef POLPRODUKTY_STORAGE_TYPES_HPP
 #define POLPRODUKTY_STORAGE_TYPES_HPP
+
+#include <stack>
+#include <list>
+#include "package.hpp"
 
 enum PackageQueueType{FIFO, LIFO};
 
@@ -18,10 +20,10 @@ public:
     virtual size_t size() const = 0;
     virtual bool empty() const = 0;
 
-    const_iterator begin() const { return stockpile_.cbegin(); }
-    const_iterator cbegin() const { return stockpile_.cbegin(); }
-    const_iterator end() const { return stockpile_.cend(); }
-    const_iterator cend() const { return stockpile_.cend(); }
+    virtual const_iterator begin() const = 0;
+    virtual const_iterator cbegin() const = 0;
+    virtual const_iterator end() const = 0;
+    virtual const_iterator cend() const = 0;
 
     virtual ~IPackageStockpile() = default;
 
@@ -44,6 +46,11 @@ public:
     size_t size() const override { return queue_.size(); }
     bool empty() const override { return queue_.size() == 0; }
 
+    const_iterator begin() const override { return queue_.begin(); };
+    const_iterator cbegin() const override { return queue_.cbegin(); };
+    const_iterator end() const override { return queue_.end(); };
+    const_iterator cend() const override { return queue_.cend(); };
+private:
     PackageQueueType queue_type_;
     std::list<Package> queue_;
 };

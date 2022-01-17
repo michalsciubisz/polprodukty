@@ -11,7 +11,7 @@
 class Package {
 public:
     Package(){
-        if(freed_IDs.size()){
+        if(!freed_IDs.empty()){
             id_=*freed_IDs.begin();
             assigned_IDs.insert(*freed_IDs.begin());
             freed_IDs.erase(freed_IDs.begin());
@@ -23,6 +23,7 @@ public:
         }
     };
     Package(ElementID id) : id_(id) {}
+    Package(const Package &p) { id_ = p.get_id(); };
     Package(Package&&) = default;
 
     static std::set<ElementID> assigned_IDs;
@@ -31,6 +32,7 @@ public:
     Package& operator=(Package&&) = default;
     ElementID get_id() const { return id_; }
     ~Package() {
+        assigned_IDs.erase(id_);
         freed_IDs.insert(get_id());
     }
 

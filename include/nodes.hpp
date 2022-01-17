@@ -18,6 +18,7 @@ enum class ReceiverType {RAMP, WORKER, STOREHOUSE};
 
 
 class IPackageReceiver {
+public:
     virtual void receive_package(Package&& p) = 0;
     virtual ElementID get_id() const = 0;
 
@@ -41,14 +42,15 @@ public:
     void remove_receiver(IPackageReceiver* r);
     IPackageReceiver* choose_receiver();
     const preferences_t& get_preferences() const {return preferences_;}
-    ProbabilityGenerator pg_;
-    preferences_t preferences_;
+
 
     const_iterator begin() const { return preferences_.begin(); }
     const_iterator cbegin() const { return preferences_.cbegin(); }
     const_iterator end() const { return preferences_.end(); }
     const_iterator cend() const { return preferences_.cend(); }
-
+private:
+    ProbabilityGenerator pg_;
+    preferences_t preferences_;
 };
 
 class PackageSender: public ReceiverPreferences {
@@ -65,7 +67,7 @@ private:
     std::optional<Package> sending_buffer_ = std::nullopt;
 
 protected:
-    void push_package(Package&&);//{sending_buffer_=p;}
+    void push_package(Package&& p) {sending_buffer_.emplace(std::move(p));}
 };
 
 class Ramp: public PackageSender {
@@ -84,7 +86,7 @@ public:
     Worker(ElementID id, TimeOffset pd, std::unique_ptr<IPackageQueue> q) : id_(id), pd_(pd), q_(std::move(q)) {}
     void do_work(Time t);
     TimeOffset get_processing_duration() const { return pd_; }
-    Time get_package_processing_start_time() const { return id_; }
+    Time get_package_processing_start_time() const { return ppst_; }
     void receive_package(Package&& p) override { q_->push(std::move(p));}
     ElementID get_id() const override { return id_; }
 
@@ -96,11 +98,13 @@ private:
     ElementID id_;
     TimeOffset pd_;
     std::unique_ptr<IPackageQueue> q_;
+    Time ppst_;
+    std::optional<Package> buffer_ = std::nullopt;
 };
 
 class Storehouse: public IPackageReceiver{
-    Storehouse(ElementID id, std::unique_ptr<IPackageStockpile> d) : id_(id), d_(std::move(d)) {}
-    ElementID id() {return id_;}
+public:
+    Storehouse(ElementID id, std::unique_ptr<IPackageStockpile> d= std::make_unique<PackageQueue>(PackageQueue(PackageQueueType::LIFO))) : id_(id), d_(std::move(d)) {}
     void receive_package(Package &&p) override { d_->push(std::move(p)); }
     ElementID get_id() const override { return id_; }
 
