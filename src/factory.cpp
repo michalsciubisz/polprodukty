@@ -202,7 +202,6 @@ Factory load_factory_structure(std::istream& is) {
                     ElementID id_2 = static_cast<ElementID>(std::stoi(s[1]));
 
                     if (data.parameters.begin()->first == "src") {
-
                         if (f[0] == "ramp") {
                             Ramp& ramp = *(factory.find_ramp_by_id(id));
                             ramp.receiver_preferences_.add_receiver(&(*factory.find_worker_by_id(id_2)));
@@ -244,10 +243,10 @@ Factory load_factory_structure(std::istream& is) {
 void save_factory_structure(Factory& factory, std::ostream& os) {
     std::string save = "; == LOADING_RAMPS ==\n\n";
     std::string link = "; == LINKS ==\n\n";
-    std::vector<ElementID> id_vector;
 
-    for (auto iter = factory.ramp_cbegin(); iter != factory.ramp_cend(); iter++) {
-        id_vector.push_back(iter->get_id());
+    std::vector<ElementID> id_vector;
+    for (auto elem = factory.ramp_cbegin(); elem != factory.ramp_cend(); elem++) {
+        id_vector.push_back(elem->get_id());
         std::sort(id_vector.begin(), id_vector.end());
     }
     for (auto id: id_vector) {
@@ -258,9 +257,9 @@ void save_factory_structure(Factory& factory, std::ostream& os) {
         std::vector<ElementID> work_id_vector;
         std::vector<ElementID> store_id_vector;
 
-        for (auto it = prefs.begin(); it != prefs.end(); it++) {
-            if(it->first->get_receiver_type() == ReceiverType::WORKER){work_id_vector.push_back(it->first->get_id()); }
-            else if(it->first->get_receiver_type() == ReceiverType::STOREHOUSE){store_id_vector.push_back(it->first->get_id()); }
+        for (auto elem = prefs.begin(); elem != prefs.end(); elem++) {
+            if(elem->first->get_receiver_type() == ReceiverType::WORKER){work_id_vector.push_back(elem->first->get_id()); }
+            else if(elem->first->get_receiver_type() == ReceiverType::STOREHOUSE){store_id_vector.push_back(elem->first->get_id()); }
         }
 
         std::sort(work_id_vector.begin(), work_id_vector.end());
@@ -280,10 +279,10 @@ void save_factory_structure(Factory& factory, std::ostream& os) {
 
     save += "\n";
     save += "; == WORKERS ==\n\n";
-    std::vector<ElementID> new_work_id_vector;
 
-    for (auto it = factory.worker_cbegin(); it != factory.worker_cend(); it++) {
-        new_work_id_vector.push_back(it->get_id());
+    std::vector<ElementID> new_work_id_vector;
+    for (auto elem = factory.worker_cbegin(); elem != factory.worker_cend(); elem++) {
+        new_work_id_vector.push_back(elem->get_id());
         std::sort(new_work_id_vector.begin(), new_work_id_vector.end());
     }
 
@@ -297,14 +296,17 @@ void save_factory_structure(Factory& factory, std::ostream& os) {
         std::vector<ElementID> work_id_vector;
         std::vector<ElementID> store_id_vector;
 
-        for (auto it = prefs.begin(); it != prefs.end(); it++) {
-            if(it->first->get_receiver_type() == ReceiverType::WORKER){work_id_vector.push_back(it->first->get_id());}
-            else if(it->first->get_receiver_type() == ReceiverType::STOREHOUSE){store_id_vector.push_back(it->first->get_id());}
+        for (auto elem = prefs.begin(); elem != prefs.end(); elem++) {
+            if (elem->first->get_receiver_type() == ReceiverType::WORKER) {
+                work_id_vector.push_back(elem->first->get_id());
+            }
+            else if(elem->first->get_receiver_type() == ReceiverType::STOREHOUSE) {
+                store_id_vector.push_back(elem->first->get_id());
+            }
         }
 
         std::sort(work_id_vector.begin(), work_id_vector.end());
         std::sort(store_id_vector.begin(), store_id_vector.end());
-
         for (auto w_id: work_id_vector) {
             link += "LINK src=worker-" + std::to_string(id);
             link += " dest=worker-" + std::to_string(w_id) + "\n";
@@ -319,10 +321,10 @@ void save_factory_structure(Factory& factory, std::ostream& os) {
 
     save += "\n";
     save += "; == STOREHOUSES ==\n\n";
-    std::vector<ElementID> new_store_id_vector;
 
-    for (auto it = factory.storehouse_cbegin(); it != factory.storehouse_cend(); it++) {
-        new_store_id_vector.push_back(it->get_id());
+    std::vector<ElementID> new_store_id_vector;
+    for (auto elem = factory.storehouse_cbegin(); elem != factory.storehouse_cend(); elem++) {
+        new_store_id_vector.push_back(elem->get_id());
         std::sort(new_store_id_vector.begin(), new_store_id_vector.end());
     }
 
