@@ -3,6 +3,7 @@
 //
 #include <stdexcept>
 #include <map>
+#include <sstream>
 #include "factory.hpp"
 
 void Factory::do_work(Time time) {
@@ -107,16 +108,16 @@ ParsedLineData parse_line(std::string line){
     else if (*tokens.begin() == "STOREHOUSE") {
         new_line.element_type = ParsedLineData::ElementType::STOREHOUSE;
     }
-    else if(*tokens.begin() == "LINK") {
+    else if (*tokens.begin() == "LINK") {
         new_line.element_type = ParsedLineData::ElementType::LINK;
     }
     else {
         throw std::logic_error("Wrong element type!");
     }
 
-    for (auto it = tokens.begin() + 1; it != tokens.end(); ++it) {
+    for (auto elem = tokens.begin() + 1; elem != tokens.end(); elem++) {
         std::string k_v;
-        std::istringstream token_stream_2(*it);
+        std::istringstream token_stream_2(*elem);
         std::vector<std::string> pairs;
         while (std::getline(token_stream_2, k_v, '=')) {
             pairs.push_back(k_v);
@@ -137,15 +138,15 @@ PackageQueueType convert(std::string str) {
         return FIFO;
     }
     else {
-        throw "Invalid queue type!";
+        throw "Invalid queue type";
     }
 }
 
-std::string convert_to_string(PackageQueueType type) {
-    if (type == FIFO) {
+std::string convert_to_string(PackageQueueType queue_type) {
+    if (queue_type == FIFO) {
         return "FIFO";
     }
-    else if(type == LIFO) {
+    else if(queue_type == LIFO) {
         return "LIFO";
     }
     else {
@@ -153,31 +154,30 @@ std::string convert_to_string(PackageQueueType type) {
     }
 }
 
-Factory load_factory_structure(std::istream& is){
-
+Factory load_factory_structure(std::istream& is) {
     Factory factory;
     std::string line;
 
-    while(std::getline(is, line)) {
+    while (std::getline(is, line)) {
         if (!line.empty() and line.find(";") == std::string::npos) {
             ParsedLineData data;
             data = parse_line(line);
 
             switch (data.element_type) {
                 case ParsedLineData::ElementType::LOADING_RAMP: {
-                    ElementID id = std::stoi(data.parameters.find("id")->second);
-                    TimeOffset time = std::stoi(data.parameters.find("delivery-interval")->second);
+                    ElementID id = static_cast<ElementID>(std::stoi(data.parameters.find("id")->second));
+                    TimeOffset time = static_cast<TimeOffset>(std::stoi(data.parameters.find("delivery-interval")->second));
                     factory.add_ramp(Ramp(id, time));
                     break;
                 }
                 case ParsedLineData::ElementType::WORKER: {
-                    ElementID id = std::stoi(data.parameters.find("id")->second);
-                    TimeOffset time = std::stoi(data.parameters.find("processing-time")->second);
+                    ElementID id = static_cast<ElementID>(std::stoi(data.parameters.find("id")->second));
+                    TimeOffset time = static_cast<TimeOffset>(std::stoi(data.parameters.find("processing-time")->second));
                     factory.add_worker(Worker(id, time, std::make_unique<PackageQueue>(convert(data.parameters.find("queue-type")->second))));
                     break;
                 }
                 case ParsedLineData::ElementType::STOREHOUSE: {
-                    ElementID id = std::stoi(data.parameters.find("id")->second);
+                    ElementID id = static_cast<ElementID>(std::stoi(data.parameters.find("id")->second));
                     factory.add_storehouse(Storehouse(id));
                     break;
                 }
@@ -198,8 +198,8 @@ Factory load_factory_structure(std::istream& is){
                         s.push_back(k_v_2);
                     }
 
-                    ElementID id = std::stoi(f[1]);
-                    ElementID id_2 = std::stoi(s[1]);
+                    ElementID id = static_cast<ElementID>(std::stoi(f[1]));
+                    ElementID id_2 = static_cast<ElementID>(std::stoi(s[1]));
 
                     if (data.parameters.begin()->first == "src") {
 
@@ -241,7 +241,7 @@ Factory load_factory_structure(std::istream& is){
     return factory;
 }
 
-void save_factory_structure(Factory& factory, std::ostream& os){
+void save_factory_structure(Factory& factory, std::ostream& os) {
     std::string save = "; == LOADING_RAMPS ==\n\n";
     std::string link = "; == LINKS ==\n\n";
     std::vector<ElementID> id_vector;
