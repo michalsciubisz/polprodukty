@@ -14,13 +14,14 @@
 #include <optional>
 
 
-enum class ReceiverType {RAMP, WORKER, STOREHOUSE};
+enum class ReceiverType {WORKER, STOREHOUSE};
 
 
 class IPackageReceiver {
 public:
     virtual void receive_package(Package&& p) = 0;
     virtual ElementID get_id() const = 0;
+    virtual ReceiverType get_receiver_type() const = 0;
 
     // W klasie IPackageReceiver nie musisz definiować nowych aliasów na typ std::list<Package>::const_iterator “od zera” –
     // możesz zdefiniować go w oparciu o alias IPackageStockpile::const_iterator
@@ -89,6 +90,7 @@ public:
     Time get_package_processing_start_time() const { return ppst_; }
     void receive_package(Package&& p) override { q_->push(std::move(p));}
     ElementID get_id() const override { return id_; }
+    ReceiverType get_receiver_type() const override { return ReceiverType::WORKER; }
 
     IPackageStockpile::const_iterator begin() const override { return q_->begin(); }
     IPackageStockpile::const_iterator cbegin() const override { return q_->cbegin(); }
@@ -107,6 +109,7 @@ public:
     Storehouse(ElementID id, std::unique_ptr<IPackageStockpile> d= std::make_unique<PackageQueue>(PackageQueue(PackageQueueType::LIFO))) : id_(id), d_(std::move(d)) {}
     void receive_package(Package &&p) override { d_->push(std::move(p)); }
     ElementID get_id() const override { return id_; }
+    ReceiverType get_receiver_type() const override { return ReceiverType::STOREHOUSE; }
 
     IPackageStockpile::const_iterator begin() const override { return d_->begin(); }
     IPackageStockpile::const_iterator cbegin() const override { return d_->cbegin(); }

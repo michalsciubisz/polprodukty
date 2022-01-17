@@ -10,7 +10,7 @@
 
 enum class NodeColor
 {
-    UNVISITED,
+    NOTVISITED,
     VISITED,
     VERIFIED
 };

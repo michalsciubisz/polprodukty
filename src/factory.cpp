@@ -26,7 +26,7 @@ void Factory::do_package_passing() {
     }
 }
 
-bool Factory::is_consistent() {
+bool Factory::is_consistent() const {
     std::map<const PackageSender*, NodeColor> color;
     for (auto elem = worker_collection_.begin(); elem != worker_collection_.end(); elem++) {
         color.insert(std::pair<const PackageSender*, NodeColor>(dynamic_cast<const PackageSender*>(&*elem), NodeColor::NOTVISITED));
@@ -47,22 +47,22 @@ bool Factory::is_consistent() {
 }
 
 
-bool Factory::has_reachable_storehouse(const PackageSender* sender, std::map<const PackageSender*, NodeColor>& node_colors) {
+bool Factory::has_reachable_storehouse(const PackageSender *sender, std::map<const PackageSender*, NodeColor>& node_colors) const {
     if (node_colors[sender] == NodeColor::VERIFIED) {
         return true;
     }
     node_colors[sender] = NodeColor::VISITED;
 
-    if (sender&->receiver_preferences_.get_prefences().empty()) {
+    if (sender->receiver_preferences_.get_preferences().empty()) {
         throw std::invalid_argument("Receivers are not defined");
     }
 
     bool has_other_receivers = false;
-    for (auto& receiver : sender->receiver_preferences_.get_preferences()) {
-        if (receiver.first->receiver_type_.get_receiver_type() == ReceiverType::STOREHOUSE) {
+    for (auto &receiver : sender->receiver_preferences_.get_preferences()) {
+        if (receiver.first->get_receiver_type() == ReceiverType::STOREHOUSE) {
             has_other_receivers = true;
         }
-        else if (receiver.first->receiver_type_.get_receiver_type() == ReceiverType::WORKER) {
+        else if (receiver.first->get_receiver_type() == ReceiverType::WORKER) {
             IPackageReceiver *receiver_ptr = receiver.first;
             auto worker_ptr = dynamic_cast<Worker*>(receiver_ptr);
             auto sendrecv_ptr = dynamic_cast<PackageSender*>(worker_ptr);
