@@ -31,7 +31,6 @@ public:
     virtual IPackageStockpile::const_iterator cbegin() const = 0;
     virtual IPackageStockpile::const_iterator end() const = 0;
     virtual IPackageStockpile::const_iterator cend() const = 0;
-    virtual ReceiverType get_receiver_type() const = 0;
 };
 
 class ReceiverPreferences {
@@ -98,7 +97,7 @@ public:
     IPackageStockpile::const_iterator cbegin() const override { return q_->cbegin(); }
     IPackageStockpile::const_iterator end() const override { return q_->end(); }
     IPackageStockpile::const_iterator cend() const override { return q_->cend(); }
-    ReceiverType get_receiver_type() const override { return ReceiverType::WORKER; };
+
 private:
     ElementID id_;
     TimeOffset pd_;
@@ -118,7 +117,7 @@ public:
     IPackageStockpile::const_iterator cbegin() const override { return d_->cbegin(); }
     IPackageStockpile::const_iterator end() const override { return d_->end(); }
     IPackageStockpile::const_iterator cend() const override { return d_->cend(); }
-    ReceiverType get_receiver_type() const override { return ReceiverType::STOREHOUSE; };
+
 private:
     ElementID id_;
     std::unique_ptr<IPackageStockpile> d_;
