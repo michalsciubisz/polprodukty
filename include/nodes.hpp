@@ -77,7 +77,7 @@ public:
     Ramp(ElementID id, TimeOffset di) : id_(id), di_(di) {}
     void deliver_goods(Time t);
     TimeOffset get_delivery_interval() const {return di_;}
-    ElementID get_id() {return id_;}
+    ElementID get_id() const {return id_;}
 private:
     ElementID id_;
     TimeOffset di_;
