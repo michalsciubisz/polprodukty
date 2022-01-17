@@ -166,19 +166,19 @@ Factory load_factory_structure(std::istream& is) {
 
             switch (data.element_type) {
                 case ParsedLineData::ElementType::LOADING_RAMP: {
-                    ElementID id = std::stoi(data.parameters.find("id")->second);
-                    TimeOffset time = std::stoi(data.parameters.find("delivery-interval")->second);
+                    ElementID id = static_cast<ElementID>(std::stoi(data.parameters.find("id")->second));
+                    TimeOffset time = static_cast<TimeOffset>(std::stoi(data.parameters.find("delivery-interval")->second));
                     factory.add_ramp(Ramp(id, time));
                     break;
                 }
                 case ParsedLineData::ElementType::WORKER: {
-                    ElementID id = std::stoi(data.parameters.find("id")->second);
-                    TimeOffset time = std::stoi(data.parameters.find("processing-time")->second);
+                    ElementID id = static_cast<ElementID>(std::stoi(data.parameters.find("id")->second));
+                    TimeOffset time = static_cast<TimeOffset>(std::stoi(data.parameters.find("processing-time")->second));
                     factory.add_worker(Worker(id, time, std::make_unique<PackageQueue>(convert(data.parameters.find("queue-type")->second))));
                     break;
                 }
                 case ParsedLineData::ElementType::STOREHOUSE: {
-                    ElementID id = std::stoi(data.parameters.find("id")->second);
+                    ElementID id = static_cast<ElementID>(std::stoi(data.parameters.find("id")->second));
                     factory.add_storehouse(Storehouse(id));
                     break;
                 }
@@ -199,8 +199,8 @@ Factory load_factory_structure(std::istream& is) {
                         s.push_back(k_v_2);
                     }
 
-                    ElementID id = std::stoi(f[1]);
-                    ElementID id_2 = std::stoi(s[1]);
+                    ElementID id = static_cast<ElementID>(std::stoi(f[1]));
+                    ElementID id_2 = static_cast<ElementID>(std::stoi(s[1]));
 
                     if (data.parameters.begin()->first == "src") {
 
