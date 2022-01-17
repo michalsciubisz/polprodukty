@@ -251,11 +251,11 @@ void save_factory_structure(Factory& factory, std::ostream& os) {
         std::string ramp = "LOADING_RAMP id=" + std::to_string(factory.find_ramp_by_id(id)->get_id());
         ramp += " delivery-interval=" + std::to_string(int(factory.find_ramp_by_id(id)->get_delivery_interval())) + "\n";
         save += ramp;
-        std::map<IPackageReceiver*, double> prefs = factory.find_ramp_by_id(id)->receiver_preferences_.get_preferences();
+        std::map<IPackageReceiver*, double> preferences = factory.find_ramp_by_id(id)->receiver_preferences_.get_preferences();
         std::vector<ElementID> work_id_vector;
         std::vector<ElementID> store_id_vector;
 
-        for (auto elem = prefs.begin(); elem != prefs.end(); elem++) {
+        for (auto elem = preferences.begin(); elem != preferences.end(); elem++) {
             if (elem->first->get_receiver_type() == ReceiverType::WORKER) {
                 work_id_vector.push_back(elem->first->get_id()); }
             else if (elem->first->get_receiver_type() == ReceiverType::STOREHOUSE) {
@@ -292,11 +292,11 @@ void save_factory_structure(Factory& factory, std::ostream& os) {
         work += " queue-type=" + convert_to_string(factory.find_worker_by_id(id)->get_queue()->get_queue_type()) + "\n";
         save += work;
 
-        std::map<IPackageReceiver*, double> prefs = factory.find_worker_by_id(id)->receiver_preferences_.get_preferences();
+        std::map<IPackageReceiver*, double> preferences = factory.find_worker_by_id(id)->receiver_preferences_.get_preferences();
         std::vector<ElementID> work_id_vector;
         std::vector<ElementID> store_id_vector;
 
-        for (auto elem = prefs.begin(); elem != prefs.end(); elem++) {
+        for (auto elem = preferences.begin(); elem != preferences.end(); elem++) {
             if (elem->first->get_receiver_type() == ReceiverType::WORKER) {
                 work_id_vector.push_back(elem->first->get_id());
             }
