@@ -99,7 +99,7 @@ ParsedLineData parse_line(std::string line){
     }
 
     if (*tokens.begin() == "LOADING_RAMP") {
-        new_line.element_type = ParsedLineData::ElementType::LOADING_RAMP;
+        new_line.element_type = ParsedLineData::ElementType::RAMP;
     }
     else if (*tokens.begin() == "STOREHOUSE") {
         new_line.element_type = ParsedLineData::ElementType::STOREHOUSE;
@@ -162,7 +162,7 @@ Factory load_factory_structure(std::istream& is) {
             data = parse_line(line);
 
             switch (data.element_type) {
-                case ParsedLineData::ElementType::LOADING_RAMP: {
+                case ParsedLineData::ElementType::RAMP: {
                     ElementID id = static_cast<ElementID>(std::stoi(data.parameters.find("id")->second));
                     TimeOffset time = static_cast<TimeOffset>(std::stoi(data.parameters.find("delivery-interval")->second));
                     factory.add_ramp(Ramp(id, time));
@@ -256,8 +256,10 @@ void save_factory_structure(Factory& factory, std::ostream& os) {
         std::vector<ElementID> store_id_vector;
 
         for (auto elem = prefs.begin(); elem != prefs.end(); elem++) {
-            if(elem->first->get_receiver_type() == ReceiverType::WORKER){work_id_vector.push_back(elem->first->get_id()); }
-            else if(elem->first->get_receiver_type() == ReceiverType::STOREHOUSE){store_id_vector.push_back(elem->first->get_id()); }
+            if (elem->first->get_receiver_type() == ReceiverType::WORKER) {
+                work_id_vector.push_back(elem->first->get_id()); }
+            else if (elem->first->get_receiver_type() == ReceiverType::STOREHOUSE) {
+                store_id_vector.push_back(elem->first->get_id()); }
         }
 
         std::sort(work_id_vector.begin(), work_id_vector.end());
