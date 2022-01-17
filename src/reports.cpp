@@ -51,7 +51,7 @@ void generate_structure_report(const Factory& factory, std::ostream& os){
     for(auto id: new_worker_id){
         std::string work = "WORKER #" + std::to_string(factory.find_storehouse_by_id(id)->get_id()) + "\n";
         work += "  Processing time: " + std::to_string(int(factory.find_worker_by_id(id)->get_processing_duration())) + "\n";
-        work += "  Queue type: " + std::to_string(factory.find_worker_by_id(id)->get_queue()->get_queue_type()) + "\n";
+        work += "  Queue type: " + convert_to_string(factory.find_worker_by_id(id)->get_queue()->get_queue_type()) + "\n";
         work += "  Receivers:\n";
         std::map<IPackageReceiver*, double> preferences = factory.find_worker_by_id(id)->receiver_preferences_.get_preferences();
         std::vector<ElementID> worker;
