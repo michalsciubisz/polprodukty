@@ -8,6 +8,17 @@
 #include "types.hpp"
 #include "nodes.hpp"
 
+struct ParsedLineData{
+    enum class ElementType{
+        LOADING_RAMP,
+        WORKER,
+        STOREHOUSE,
+        LINK
+    } element_type;
+    std::map<std::string, std::string> parameters;
+};
+
+
 enum class NodeColor
 {
     NOTVISITED,
