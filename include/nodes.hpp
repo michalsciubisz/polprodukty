@@ -14,7 +14,7 @@
 #include <optional>
 
 
-enum class ReceiverType {RAMP, WORKER, STOREHOUSE};
+enum class ReceiverType {WORKER, STOREHOUSE};
 
 
 class IPackageReceiver {
