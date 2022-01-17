@@ -111,4 +111,10 @@ public:
     void do_work(Time time);
 };
 
+std::string convert_to_string(PackageQueueType type);
+ParsedLineData parse_line(std::string line);
+PackageQueueType convert(std::string str);
+Factory load_factory_structure(std::istream& is);
+void save_factory_structure(Factory& factory, std::ostream& os);
+
 #endif //MAIN_CPP_FACTORY_HPP
