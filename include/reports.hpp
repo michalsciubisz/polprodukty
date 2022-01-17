@@ -15,7 +15,7 @@ class InterrvalReportNotifier{
 public:
     InterrvalReportNotifier(TimeOffset to){to_ = to;}
     bool should_generate_report(Time t){
-        return (fmodf(t, Toffset) == 1);
+        return (fmodf(t, to_) == 1);
     }
 private:
     TimeOffset to_;
