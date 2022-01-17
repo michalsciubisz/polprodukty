@@ -108,16 +108,16 @@ ParsedLineData parse_line(std::string line){
     else if (*tokens.begin() == "STOREHOUSE") {
         new_line.element_type = ParsedLineData::ElementType::STOREHOUSE;
     }
-    else if(*tokens.begin() == "LINK") {
+    else if (*tokens.begin() == "LINK") {
         new_line.element_type = ParsedLineData::ElementType::LINK;
     }
     else {
         throw std::logic_error("Wrong element type!");
     }
 
-    for (auto it = tokens.begin() + 1; it != tokens.end(); ++it) {
+    for (auto elem = tokens.begin() + 1; elem != tokens.end(); elem++) {
         std::string k_v;
-        std::istringstream token_stream_2(*it);
+        std::istringstream token_stream_2(*elem);
         std::vector<std::string> pairs;
         while (std::getline(token_stream_2, k_v, '=')) {
             pairs.push_back(k_v);
@@ -138,15 +138,15 @@ PackageQueueType convert(std::string str) {
         return FIFO;
     }
     else {
-        throw "Invalid queue type!";
+        throw "Invalid queue type";
     }
 }
 
-std::string convert_to_string(PackageQueueType type) {
-    if (type == FIFO) {
+std::string convert_to_string(PackageQueueType queue_type) {
+    if (queue_type == FIFO) {
         return "FIFO";
     }
-    else if(type == LIFO) {
+    else if(queue_type == LIFO) {
         return "LIFO";
     }
     else {
@@ -155,7 +155,6 @@ std::string convert_to_string(PackageQueueType type) {
 }
 
 Factory load_factory_structure(std::istream& is) {
-
     Factory factory;
     std::string line;
 
