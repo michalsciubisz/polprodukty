@@ -24,12 +24,14 @@ set(SOURCES_FILES_TESTS
         netsim_tests/test/test_storage_types.cpp
         netsim_tests/test/test_package.cpp
         netsim_tests/test/test_nodes.cpp
+        netsim_tests/test/test_Factory.cpp
+#        netsim_tests/test/test_factory_io.cpp
         )
 
 # Dodaj konfigurację typu `Test`.
 add_executable(polprodukty_test ${SOURCE_FILES} ${SOURCES_FILES_TESTS} netsim_tests/test/main_gtest.cpp)
 
-target_compile_definitions(polprodukty_test PUBLIC EXERCISE_ID=2)
+target_compile_definitions(polprodukty_test PUBLIC EXERCISE_ID=3)
 
 # Dodaj katalogi z plikami nagłówkowymi wyłącznie do konkretnej konfiguracji (tu: `Test`).
 target_include_directories(polprodukty_test PUBLIC

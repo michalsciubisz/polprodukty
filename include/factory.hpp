@@ -8,9 +8,20 @@
 #include "types.hpp"
 #include "nodes.hpp"
 
+struct ParsedLineData{
+    enum class ElementType{
+        LOADING_RAMP,
+        WORKER,
+        STOREHOUSE,
+        LINK
+    } element_type;
+    std::map<std::string, std::string> parameters;
+};
+
+
 enum class NodeColor
 {
-    UNVISITED,
+    NOTVISITED,
     VISITED,
     VERIFIED
 };
@@ -110,5 +121,11 @@ public:
     void do_package_passing();
     void do_work(Time time);
 };
+
+std::string convert_to_string(PackageQueueType type);
+ParsedLineData parse_line(std::string line);
+PackageQueueType convert(std::string str);
+Factory load_factory_structure(std::istream& is);
+void save_factory_structure(Factory& factory, std::ostream& os);
 
 #endif //MAIN_CPP_FACTORY_HPP
