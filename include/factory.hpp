@@ -8,15 +8,15 @@
 #include "types.hpp"
 #include "nodes.hpp"
 
-struct ParsedLineData{
-    enum class ElementType{
-        RAMP,
-        WORKER,
-        STOREHOUSE,
-        LINK
-    } element_type;
-    std::map<std::string, std::string> parameters;
-};
+//struct ParsedLineData{
+//    enum class ElementType{
+//        RAMP,
+//        WORKER,
+//        STOREHOUSE,
+//        LINK
+//    } element_type;
+//    std::map<std::string, std::string> parameters;
+//};
 
 
 enum class NodeColor
@@ -122,10 +122,10 @@ public:
     void do_work(Time time);
 };
 
-std::string convert_to_string(PackageQueueType queue_type);
-ParsedLineData parse_line(std::string line);
-PackageQueueType convert(std::string str);
-Factory load_factory_structure(std::istream& is);
-void save_factory_structure(Factory& factory, std::ostream& os);
+//std::string convert_to_string(PackageQueueType queue_type);
+//ParsedLineData parse_line(std::string line);
+//PackageQueueType convert(std::string str);
+//Factory load_factory_structure(std::istream& is);
+//void save_factory_structure(Factory& factory, std::ostream& os);
 
 #endif //MAIN_CPP_FACTORY_HPP

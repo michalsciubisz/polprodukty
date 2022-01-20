@@ -92,8 +92,8 @@ public:
     void receive_package(Package&& p) override { q_->push(std::move(p));}
     ElementID get_id() const override { return id_; }
     ReceiverType get_receiver_type() const override { return ReceiverType::WORKER; }
-    const std::optional<Package>& get_processing_buffer() const {return buffer_;};
-    IPackageQueue* get_queue() const {return &*q_;};
+    //const std::optional<Package>& get_processing_buffer() const {return buffer_;};
+    //IPackageQueue* get_queue() const {return &*q_;};
 
     IPackageStockpile::const_iterator begin() const override { return q_->begin(); }
     IPackageStockpile::const_iterator cbegin() const override { return q_->cbegin(); }
